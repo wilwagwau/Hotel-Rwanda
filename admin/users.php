@@ -58,7 +58,7 @@
 					<!--Php query-->
 					<?php
 						
-						$query = $conn->query("SELECT * FROM `tbl_users` WHERE `role` LIKE 'user' ") or die(mysqli_error());
+						$query = $conn->query("SELECT * FROM `tbl_users` WHERE `role` LIKE 'user' AND `IsDeleted` LIKE b'0' ") or die(mysqli_error());
 						while($fetchUser = $query->fetch_array()) {
 					?>
 						<tr>
@@ -71,7 +71,7 @@
 								<center>
 									<!--<a class = "btn btn-sm btn-outline-info" href = "edit_room.php?room_id=<?php echo $fetchUser['user_id']?>"><i class = "fa fa-list"></i>.</a> -->
 									<a title="Update <?php echo $fetchUser['name'] ?> ?" class = "btn btn-sm btn-outline-success" href="update_user.php?user_id=<?php echo $fetchUser['user_id'] ?>"><i class = "fa fa-edit"></i> Edit</a>
-									<a title="Remove <?php echo $fetchUser['name'] ?> ?" class = "btn btn-sm btn-outline-danger" onclick = "confirmationDelete(<?php echo $fetchUser['user_id']?>); return false;" href = "delete_user.php?user_id=<?php echo $fetchUser['user_id']?>"><i class = "fa fa-trash"></i> Delete</a>
+									<a title="Remove <?php echo $fetchUser['name'] ?> ?" class = "btn btn-sm btn-outline-danger" onclick = "confirmationDelete(<?php echo $fetchUser['user_id']?>); return false;" href = "delete_user.php?user_id=<?php echo $fetchUser['user_id']?>"><i class = "fa fa-trash"></i> Trash</a>
 									<!--<a class = "btn btn-sm btn-outline-danger" onClick = "confirmationDelete(<?php echo $fetchUser['user_id']?>);" name="Delete"><i class = "fa fa-trash"></i> Delete</a>-->
 								</center>
 								<script language="javascript">

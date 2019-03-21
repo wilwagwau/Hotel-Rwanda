@@ -4,4 +4,5 @@
 	$fetch1 = $query->fetch_array();
 	$name = $fetch1['name'];
 	$surname = $fetch1['surname'];
+	$role = $fetch1['role'];
 ?>

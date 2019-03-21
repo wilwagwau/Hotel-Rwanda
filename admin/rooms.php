@@ -77,7 +77,7 @@
 								<center>
 									<!--<a class = "btn btn-sm btn-outline-info" href = "edit_room.php?room_id=<?php echo $fetchRoom['room_id']?>"><i class = "fa fa-list"></i>.</a> -->
 									<a class = "btn btn-sm btn-outline-success disabled" href="update_user.php?user_id=<?php echo $fetchRoom['rom_id'] ?>"><i class = "fa fa-edit"></i> Edit</a>
-									<a class = "btn btn-sm btn-outline-danger disabled" onclick = "confirmationDelete(<?php echo $fetchRoom['room_id']?>); return false;" href = "delete_user.php?user_id=<?php echo $fetchRoom['room_id']?>"><i class = "fa fa-trash"></i> Delete</a>
+									<a class = "btn btn-sm btn-outline-danger" onclick = "confirmationDelete(<?php echo $fetchRoom['room_id']?>); return false;" href = "delete_user.php?user_id=<?php echo $fetchRoom['room_id']?>"><i class = "fa fa-trash"></i> Delete</a>
 									<!--<a class = "btn btn-sm btn-outline-danger" onClick = "confirmationDelete(<?php echo $fetchRoom['room_id']?>);" name="Delete"><i class = "fa fa-trash"></i> Delete</a>-->
 								</center>
 								<script language="javascript">
