@@ -22,7 +22,7 @@
                         <div class="container">
                             <div class="welcome text-center wow fadeInUp delay-1s">
                                 <h2>Welcome to <span style="color:#4cff00">Hotel<span style="color:#fb7416"> Rwanda</span></span></h2>
-                                <p><a href="#"><b><span style="color:#4cff00">Hotel<span style="color:#fb7416"> Rwanda</span></span></a></b>  is an online marketplace for electronics among other commodities. It has partnered with more than 50,000 local African companies and individuals. It was established in <b style="color: #036a81">2006</b> by <a style="color: #036a81" href="#"><b>Hotel Rwanda User Group</b></a></p>
+                                <p><a href="#"><b><span style="color:#4cff00">Hotel<span style="color:#fb7416"> Rwanda</span></span></a></b>  is world class Hotel, an oasis of tranquility and serenity where we blend Hospitality with creativity to ensure consistent delivery of high quality service. It is located in with Narok Town, one of the tourist attraction region in Kenya. It was established in <b style="color: #036a81">2006</b> by <a style="color: #036a81" href="#"><b>Hotel Rwanda User Group</b></a></p>
                                 <button class="btn home-btn" type="submit">Read more <i style="color:#fff" class="fa fa-angle-double-right"></i></button>
                             </div>
                         </div>
