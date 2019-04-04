@@ -22,7 +22,7 @@
 			<div class="col-md-6 col-md-offset-4">
 				<div class="login-panel panel panel-info">
                     <div class="panel-heading">
-                        <h5 class="panel-title"><i>Let's confirm your details</i></h5><hr />
+                        <h5 class="panel-title"><i>Let's confirm your details.</i></h5><hr />
                     </div>
                     <div class="panel-body">
                         <form role="form" method = "post" enctype = "multipart/form-data">

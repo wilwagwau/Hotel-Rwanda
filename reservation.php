@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="card card-info">
 			<div class="card-body">
-				<strong><h6 class="text-info">MAKE RESERVATION</h6></strong>
+				<strong><h6 class="text-info">MAKE RESERVATION.</h6></strong>
 				<hr>
 				<?php
 					require_once 'admin/includes/config.php';
