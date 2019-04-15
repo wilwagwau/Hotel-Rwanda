@@ -18,7 +18,7 @@
 	<br/>
 		<div class="row">
 		<br/>
-			<div class="col-md-6"></div>
+			<div class="col-md-6" style="border-right: 1px solid grey"></div>
 			<div class="col-md-6 col-md-offset-4">
 				<div class="login-panel panel panel-info">
                     <div class="panel-heading">
