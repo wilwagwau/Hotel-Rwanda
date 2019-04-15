@@ -1,24 +1,39 @@
 <html>
 <head>
-	<?php include 'includes/head.php'; ?>
+	<?php include 'includes/head.php';?>
 	<title>About Us</title>
 </head>
-<body>
+	
+<body class="hold-transition skin-blue layout-top-nav">
 	<div>
 		<?php include 'includes/navigation.php' ?>
 	</div>
+	<br>
 	<div class="container">
-		<div class="panel panel-info">
+		<div class="panel panel-default">
 			<div class="panel-body">
-				<br />
-				<b><h6 class="text-info">ABOUT US</h6></b>
+				<strong><h6 class="text-info">About Us</h6></strong>
 				<hr>
-				
+				<div class="container" id="top-section">
+		                
+		        </div>
+				      <!-- Welcome Text-->
+                    <section id="welcome" class="about">
+                        <div class="container">
+                            <div class="welcome text-center wow fadeInUp delay-1s">
+                                <h2>Welcome to <span style="color:#4cff00">Hotel<span style="color:#fb7416"> Rwanda</span></span></h2>
+                                <p><a href="#"><b><span style="color:#4cff00">Hotel<span style="color:#fb7416"> Rwanda</span></span></a></b>  is an online marketplace for electronics among other commodities. It has partnered with more than 50,000 local African companies and individuals. It was established in <b style="color: #036a81">2006</b> by <a style="color: #036a81" href="#"><b>Hotel Rwanda User Group</b></a></p>
+                                <button class="btn home-btn" type="submit">Read more <i style="color:#fff" class="fa fa-angle-double-right"></i></button>
+                            </div>
+                        </div>
+                    </section>
+		           <!-- <center><h3>Our Partners</h3></center> -->
 			</div>
 		</div>
 	</div>
-<div>
-	<?php include 'includes/footer.php' ?>
+  
+  	<?php include 'includes/footer.php'; ?>
 </div>
+
 </body>
 </html>
