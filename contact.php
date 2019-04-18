@@ -14,13 +14,17 @@
 					<br />
 					<b><h6 class="text-info">CONTACT US</h6></b>
 					<hr>
-				
+						
 					<div class="row">
 					
-						<div class="col-md-6"><br>
-							
+						<div class="col-md-6"><br><br>
+							<img src="images/customer-support.png" />
+							<div class="row">
+								
+							</div>
 						</div>
 						<div class="col-md-6">
+						
 							<center>Write To Us</center>
 							<form>
 								<div class="form-group">

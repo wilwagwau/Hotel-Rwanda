@@ -12,7 +12,7 @@
 				<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<?php echo $name." ".$surname; ?>
+							<?php echo $name." ".$surname; ?> <i class="fa fa-angle-double-right"></i> [ <?php echo $role; ?> ]
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="myaccount.php"> <i class="fa fa-user-circle-o"></i> Account</a>
