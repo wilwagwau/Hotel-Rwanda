@@ -51,7 +51,7 @@
 						<button type="submit" class="btn btn-success btn-sm btn-flat" name="print"><span class="fa fa-print"></span> Print</button>
 					</form> -->
 
-					<a href="printReservation.php" target="_blank" class="text-success"><span class="fa fa-print"></span> Print</a>
+					<a href="print_report.php" target="_blank" class="text-success"><span class="fa fa-print"></span> Print</a>
 				</div> 
 				
 			</div>
@@ -224,7 +224,7 @@
 									<td><?php echo "Ksh. ".$fetch['bill'].".00"?></td>
 									<td>
 										<center>
-											<a class = "btn btn-sm btn-outline-info" target="_blank" href = "printReport.php?transaction_id=<?php echo $fetch['transaction_id']?>"> Print</a>
+											<a class = "btn btn-sm btn-outline-info" target="_blank" href = "print_receipt.php?transaction_id=<?php echo $fetch['transaction_id']?>"> Print</a>
 										</center>
 									</td>
 								</tr>

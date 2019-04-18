@@ -7,6 +7,9 @@
 	
 	<!---Core CSS Stylesheet-->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/jquery.dataTables.css">
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery.dataTables.js"></script>
 
 	<!--Links For Bootstrap--->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
