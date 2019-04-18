@@ -14,7 +14,7 @@
 	<div>
 		<?php include '../includes/header.php' ?>
 	</div>
-	<div class="container">
+	<div class="containe" style="margin-left: 25px; margin-right:25px;">
 		
 		<div class="panel panel-info">
 			<div class="panel-body">
@@ -42,7 +42,7 @@
 				</button>
 				
 				<br /> <br />
-				<table id = "table" class = "table table-bordered">
+				<table id = "table" class = "table table-bordered table-responsive-sm table-hover">
 					<thead>
 						<tr>
                             <th>Room Photo</th>
@@ -68,24 +68,22 @@
 							<td>Ksh. <?php echo $fetchRoom['room_rate'] ?>.00</td>
 							<td>
 								<?php if($fetchRoom['room_status']==0)
-										echo "<p class = 'text-danger'>Not Available</p>";
+										echo "<button class = 'btn btn-sm btn-danger disabled'><i class='fa fa-ban'></i> Booked</button>";
 										else if($fetchRoom['room_status']==1)
-										echo "<p class = 'text-success'>Available</p>";
+										echo "<button class = 'btn btn-sm btn-success disabled'><i class='fa fa-check-circle'></i> Vaccant</button>";
 								?>
 							</td>
 							<td>
 								<center>
-									<!--<a class = "btn btn-sm btn-outline-info" href = "edit_room.php?room_id=<?php echo $fetchRoom['room_id']?>"><i class = "fa fa-list"></i>.</a> -->
-									<a class = "btn btn-sm btn-outline-success disabled" href="update_user.php?user_id=<?php echo $fetchRoom['rom_id'] ?>"><i class = "fa fa-edit"></i> Edit</a>
-									<a class = "btn btn-sm btn-outline-danger" onclick = "confirmationDelete(<?php echo $fetchRoom['room_id']?>); return false;" href = "delete_user.php?user_id=<?php echo $fetchRoom['room_id']?>"><i class = "fa fa-trash"></i> Delete</a>
-									<!--<a class = "btn btn-sm btn-outline-danger" onClick = "confirmationDelete(<?php echo $fetchRoom['room_id']?>);" name="Delete"><i class = "fa fa-trash"></i> Delete</a>-->
+									<a class = "btn btn-sm btn-outline-success" href="update_room.php?room_id=<?php echo $fetchRoom['room_id'] ?>"><i class = "fa fa-edit"></i> Edit</a>
+									<a class = "btn btn-sm btn-outline-danger disabled" onclick = "confirmationDelete(<?php echo $fetchRoom['room_id']?>); return false;" href = "delete_room.php?room_id=<?php echo $fetchRoom['room_id']?>"><i class = "fa fa-trash"></i> Trash</a>
 								</center>
 								<script language="javascript">
 								function confirmationDelete(userid)
 								{
-									if(confirm("Do you want to delete this record ?"))
+									if(confirm("Do you want to delete record of this room ?"))
 									{
-									window.location.href='delete_user.php?user_id='+userid;
+									window.location.href='delete_room.php?room_id='+roomid;
 									return true;
 									}
 								}
@@ -99,20 +97,12 @@
 					</tbody>
 				</table>
 
-
-
-
-
-
-
-
-
 			</div>
 		</div>
 	
 	</div>
 <div>
-	<?php include '../includes/footer.php' ?>
+	<!-- <?php include '../includes/footer.php' ?> -->
 </div>
 
 <!-- Add New User Modal -->

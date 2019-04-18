@@ -10,12 +10,24 @@
 				$room_rate=$_POST['room_rate'];
 				$room_status=$_POST['room_status'];
 
-				$query = $conn->query("INSERT INTO tbl_rooms(room_type,room_label,room_rate,room_status) VALUES('$room_type','$room_label','$room_rate','$room_status')") or die (mysql_error());        
-				 
+				$query = $conn->query("SELECT * FROM tbl_rooms WHERE room_type = '$room_type' && room_label = '$room_label' ") or die (mysql_error());
+				$count = $query->num_rows;
+
+					if ($count  > 0)
+					{ 
 ?>
-		<script>swal('Success..!', 'A new room was added', 'success');</script>";
-	
-	<?php		
+		<script>alert("This Room alredy Exist");</script>
+		<!-- <script>swal('Sorry..!', 'The National ID <?php echo $count['national_id']?> already exist', 'warning');</script>"; -->
+	<?php
+					}
+					else
+					{
+						$user = $conn->query("insert into tbl_rooms(room_type, room_label, room_rate,room_status) VALUES('$room_type', '$room_label','$room_rate','$room_status')");
+						//$result = $user->fecth_array();
+	?>
+						<script>alert('You added a new room successfully.');</script>
+	<?php
+					}
 			} 
 	?>
  
@@ -48,6 +60,7 @@
                   <select class = "form-control" name = "room_type" required>
 										<option></option>
 										<option>Mini Suite</option>
+										<option>Junior Suite</option>
 										<option>Master Suite</option>
 									</select>
 							</div>
