@@ -50,7 +50,7 @@ class myPDF extends FPDF
 		$this->Cell(33,10,'National ID',1,0,'L');
         $this->Cell(45,10,'Email Address',1,0,'L');
 		
-		$this->Cell(34,10,'Date Joined',1,0,'L');
+		$this->Cell(34,10,'Date Joined..',1,0,'L');
 		$this->Cell(22,10,'Status',1,1,'L');
 		
 		//$this->Ln();
