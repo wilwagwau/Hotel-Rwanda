@@ -1,4 +1,12 @@
-
+<?php
+	include_once '../admin/includes/config.php';
+	$query = $conn->query("SELECT * FROM `tbl_users` WHERE `user_id` = '$_SESSION[user_id]'") or die(mysqli_error());
+	$fetch1 = $query->fetch_array();
+	$name = $fetch1['name'];
+	$surname = $fetch1['surname'];
+	$role = $fetch1['role'];
+	$user_id = $fetch1['user_id'];
+?>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container" style="margin-left: -12px;	">
 			<a class="navbar-brand" href="home.php" style="color: #4cff00; font-size: 22px;">Hotel<span style="color: #fb7416"> Rwanda</span></a>

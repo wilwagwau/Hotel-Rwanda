@@ -1,14 +1,14 @@
 #top-section{
-    height: 0vh;
-    background-image: url(images/slides/banner1.jpg); 
+    height: 10vh;
+    /* background-image: url(images/slides/banner1.jpg); 
     background-size: cover; 
-    background-position: center;
+    background-position: center; */
 }
 
 /*----------Welocme Text-------------*/
 .welcome{
     padding: 50px 100px;
-    margin-top: -180px;
+    margin-top: 2px;
     background-color: #fff;
     box-shadow: 0 0 20px 7px rgba(0,0,0, 0.2);
 }
