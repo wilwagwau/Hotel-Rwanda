@@ -70,7 +70,7 @@
 											<button class = "btn btn-sm btn-outline-info btn-block form-control" name = "add_guest"><i class="fa fa-check-circle"></i> Submit </button>
 										</div>
 										<div class="col">
-											<a href="index.php" class="btn btn-sm btn-outline-danger btn-block form-control"><i class="fa fa-times-circle"></i> Cancel </a>
+											<a href="reservation.php" class="btn btn-sm btn-outline-danger btn-block form-control"><i class="fa fa-times-circle"></i> Cancel </a>
 										</div>
 									</div>	
 								</div>
