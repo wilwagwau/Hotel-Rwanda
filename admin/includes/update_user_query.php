@@ -10,6 +10,7 @@
 		
 		//Updating details
 		$conn->query("UPDATE `tbl_users` SET `name` = '$name', `surname` = '$surname', `email_id` = '$email_id', `national_id` = '$national_id' WHERE `user_id` = '$_REQUEST[user_id]' ") or die(mysqli_error());
+		echo "<script type='text/javascript'> alert('User was updated successfully'); </script>";
 		echo "<script type='text/javascript'> document.location = 'users.php'; </script>";
 	}
 ?>

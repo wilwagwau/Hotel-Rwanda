@@ -29,6 +29,7 @@
 				$national_id=$_POST['national_id'];
 				$user_type = $_POST['role'];
 				$password = md5($_POST['password']);
+				date_default_timezone_set("Africa/Nairobi");
 				$datePrint=date("d-m-Y");
 				$time = date("h:i:sa");
 

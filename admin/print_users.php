@@ -48,9 +48,9 @@ class myPDF extends FPDF
 		$this->Cell(10,10,'Sr.',1,0,'C');
 		$this->Cell(44,10,'Name',1,0,'L');
 		$this->Cell(33,10,'National ID',1,0,'L');
-        $this->Cell(45,10,'Email Address',1,0,'L');
+        $this->Cell(79,10,'Email Address',1,0,'L');
 		
-		$this->Cell(34,10,'Date Joined..',1,0,'L');
+		//$this->Cell(34,10,'Date Joined..',1,0,'L');
 		$this->Cell(22,10,'Status',1,1,'L');
 		
 		//$this->Ln();
@@ -65,9 +65,9 @@ class myPDF extends FPDF
             $this->Cell(10,10,$fetch2['user_id'],1,0,'C');
 			$this->Cell(44,10,$fetch2['name'].' '.$fetch2['surname'],1,0,'L');
 			$this->Cell(33,10,$fetch2['national_id'],1,0,'L');
-			$this->Cell(45,10,$fetch2['email_id'],1,0,'L');
+			$this->Cell(79,10,$fetch2['email_id'],1,0,'L');
 		
-			$this->Cell(34,10,$fetch2['date_created'],1,0,'L');
+			//$this->Cell(34,10,$fetch2['date_created'],1,0,'L');
 			$this->Cell(22,10,$fetch2['status'],1,1,'L');
                      
             $this->SetFont("Times","",12);

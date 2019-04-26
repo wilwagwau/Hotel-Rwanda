@@ -5,8 +5,8 @@
 	{
 		$national_id = $_POST['national_id'];
 		$email_id = $_POST['email_address'];
-		$new_pass = $_POST['new_pass'];
-		$confirm_new_pass = $_POST['confirm_new_pass'];
+		$new_pass = md5($_POST['new_pass']);
+		$confirm_new_pass = md5($_POST['confirm_new_pass']);
 		
 		//Check the credentials
 		$query = $conn->query("SELECT * FROM `tbl_users` WHERE `national_id` LIKE '$national_id' && `email_id` LIKE '$email_id' ") or die(mysqli_error());
