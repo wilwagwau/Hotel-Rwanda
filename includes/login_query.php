@@ -4,7 +4,7 @@
 	if(ISSET ($_POST['login']))
 	{
 		$email_id = $_POST['email_address'];
-		$password = $_POST['password'];
+		$password = md5($_POST['password']);
 
 		$query = $conn->query("SELECT * FROM `tbl_users` WHERE `email_id` = '$email_id' AND `password` = '$password'") or die(mysqli_error());
 		$fetch = $query->fetch_array();

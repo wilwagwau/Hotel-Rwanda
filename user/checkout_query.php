@@ -7,6 +7,6 @@
 	if($reserveQuer==1)
 	{
 		$conn->query("UPDATE `tbl_rooms` SET `room_status` = 1 WHERE `room_id` = '$row[room_id]' ") or die(mysqli_error());
-		echo "<script type='text/javascript'> document.location = 'reservations.php'; </script>";
+		echo "<script type='text/javascript'> document.location = 'checked_out.php'; </script>";
 	}
 ?>

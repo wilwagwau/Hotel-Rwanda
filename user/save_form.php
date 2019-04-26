@@ -15,6 +15,6 @@
 		$checkout = date("Y-m-d", strtotime($fetch['checkin']."+".$days."DAYS"));
 			
 		$conn->query("UPDATE `tbl_transaction` SET `days` = '$days', `extra_bed` = '$extra_bed', `status` = 'Check In', `checkin_time` = '$time', `checkout` = '$checkout', `bill` = '$total3' WHERE `transaction_id` = '$_REQUEST[transaction_id]'") or die(mysqli_error());
-		header("location:reservations.php");	
+		header("location:checked_in.php");	
 	}
 ?>

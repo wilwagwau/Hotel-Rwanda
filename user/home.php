@@ -34,6 +34,7 @@
 		<div class="card border-info">
 			<div class="card-header">Dashbord</div>
 			<div class="card-body text-secondary">
+
 				<div class="row">
 				
 				<!--Pending-->
@@ -41,12 +42,12 @@
 					$q_p = $conn->query("SELECT COUNT(*) as total FROM `tbl_transaction` WHERE `status` = 'Pending'") or die(mysqli_error());
 					$f_p = $q_p->fetch_array();
 				?>
-					<div class="col-md-3">
-						<div class="card" style="width: 16rem;">
+					<div class="col-md-4">
+						<div class="card" style="width: 20rem;">
 							<div class="card-body">
-								<i style="font-size: 30px; " class="fa fa-inbox text-info"></i>
+								<i style="font-size: 35px; " class="fa fa-inbox text-info"></i>
 									<div class="stat-panel-title"><b>Pending Reservations</b></div>
-								<p class="card-text text-center" style="font-size: 40px;"><?php echo $f_p['total']; ?></p>
+								<p class="card-text text-center" style="font-size: 25px;"><?php echo $f_p['total']; ?></p>
 								<a href="reservations.php" class="card-link">See Details</a>
 							</div>
 						</div>
@@ -57,13 +58,13 @@
 						$q_ci = $conn->query("SELECT COUNT(*) as total FROM `tbl_transaction` WHERE `status` = 'Check In'") or die(mysqli_error());
 						$f_ci = $q_ci->fetch_array();
 					?>
-					<div class="col-md-3">
-						<div class="card" style="width: 16rem;">
+					<div class="col-md-4">
+						<div class="card" style="width: 20rem;">
 							<div class="card-body">
-							<i style="font-size: 30px; " class="fa fa-list text-info"></i>
+							<i style="font-size: 35px; " class="fa fa-list text-info"></i>
 									<div class="stat-panel-title"><b>Checked In</b></div>
-								<p class="card-text text-center" style="font-size: 40px;"><?php echo $f_ci['total']; ?></p>
-								<a href="reservations.php" class="card-link">See Details</a>
+								<p class="card-text text-center" style="font-size: 25px;"><?php echo $f_ci['total']; ?></p>
+								<a href="checked_in.php" class="card-link">See Details</a>
 							</div>
 						</div>
 					</div>
@@ -73,30 +74,71 @@
 							$q_co = $conn->query("SELECT COUNT(*) as total FROM `tbl_transaction` WHERE `status` = 'Check out'") or die(mysqli_error());
 							$f_co = $q_co->fetch_array();
 					?>
-					<div class="col-md-3">
-						<div class="card" style="width: 16rem;">
+					<div class="col-md-4">
+						<div class="card" style="width: 20rem;">
 							<div class="card-body">
-							<i style="font-size: 30px; " class="fa fa-folder-open-o text-info"></i>
+							<i style="font-size: 35px; " class="fa fa-folder-open-o text-info"></i>
 									<div class="stat-panel-title" ><b>Checked Out</b></div>
-								<p class="card-text text-center" style="font-size: 40px;"><?php echo $f_co['total']; ?></p>
-								<a href="reservations.php" class="card-link">See Details</a>
+								<p class="card-text text-center" style="font-size: 25px;"><?php echo $f_co['total']; ?></p>
+								<a href="checked_out.php" class="card-link">See Details</a>
 							</div>
 						</div>
 					</div>
-					
+				</div><br>
+				<div class="row">
 
 					<!-- Rooms-->
 					<?php			
 							$q_co = $conn->query("SELECT COUNT(*) as total FROM `tbl_rooms` WHERE `room_status` = 1 ") or die(mysqli_error());
 							$f_co = $q_co->fetch_array();
 					?>
-					<div class="col-md-3">
-						<div class="card" style="width: 16rem;">
+					<div class="col-md-4">
+						<div class="card" style="width: 20rem;">
 							<div class="card-body">
-							<i style="font-size: 30px; " class="fa fa-ravelry"></i>
+							<i style="font-size: 35px; " class="fa fa-ravelry text-success"></i>
 									<div class="stat-panel-title" ><b>Available Rooms</b></div>
-								<p class="card-text text-center" style="font-size: 40px;"><?php echo $f_co['total']; ?></p>
+								<p class="card-text text-center" style="font-size: 25px;"><?php echo $f_co['total']; ?></p>
 								<a href="rooms.php" class="card-link">See Details</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Cancelled-->
+					<?php			
+							$q_cr = $conn->query("SELECT COUNT(*) as total FROM `tbl_transaction` WHERE `status` = 'Cancelled' ") or die(mysqli_error());
+							$f_cr = $q_cr->fetch_array();
+					?>
+					<div class="col-md-4">
+						<div class="card" style="width: 20rem;">
+							<div class="card-body">
+							<i style="font-size: 35px; " class="fa fa-times text-danger"></i>
+									<div class="stat-panel-title" ><b>Cancelled Reservations</b></div>
+								<p class="card-text text-center" style="font-size: 25px;"><?php echo $f_cr['total']; ?></p>
+								<a href="cancelled.php" class="card-link">See Details</a>
+							</div>
+						</div>
+					</div>
+
+					
+					<!-- Sales-->
+					<?php
+						$stmt = $conn->query("SELECT * FROM `tbl_transaction` WHERE `status` = 'Check out' ") or die(mysqli_error($conn));
+						$stmt1 = $stmt->fetch_array();
+					
+						$total = 0;
+						foreach($stmt as $details)
+						{
+						  $subtotal = $details['bill'];
+						  $total += $subtotal;
+						}
+					?>
+					<div class="col-md-4">
+						<div class="card" style="width: 20rem;">
+							<div class="card-body">
+							<i style="font-size: 35px; " class="fa fa-money text-success"></i>
+									<div class="stat-panel-title" ><b>Total Amount</b></div>
+								<p class="card-text text-center" style="font-size: 25px;"><?php echo "Ksh. ".$total; ?></p>
+								<a href="print_report.php" target="_blank" class="card-link">See Details</a>
 							</div>
 						</div>
 					</div>

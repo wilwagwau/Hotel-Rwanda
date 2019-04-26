@@ -64,19 +64,11 @@
 									<label>Email Address</label>
 										<input class="form-control" placeholder="Enter email address" value="<?php echo $fetch['email_id']?>" name="email_address" type="email" required>
 								</div>
-								
 								<div class="form-group">
-									<div class="row">
-										<div class="col">
-											<label>Password</label>
-												<input type="password" class="form-control" value="<?php echo $fetch['password']?>" name="password" placeholder="Enter password" required>
-										</div>
-										<div class="col">
-											<label>National ID</label>
+									<label>National ID</label>
 												<input type="number" class="form-control" value="<?php echo $fetch['national_id']?>" name="national_id" placeholder="Enter Id Number" required>	
-										</div>
-									</div>
 								</div>
+								
 											
 								<button class="btn btn-lg btn-outline-primary btn-block " name = "updateUser">Update <i class="fa fa-spin fa-refresh"></i></button>
 											

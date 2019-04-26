@@ -17,6 +17,9 @@
 <!--PHP Script that adds a new user -->
 <?php 
 		require '../admin/includes/config.php';
+		date_default_timezone_set("Africa/Nairobi");
+		$datePrint=date("d-m-Y");
+		$time = date("h:i:sa");
 								
 			if (isset($_POST['addUser']))
 			{
@@ -25,7 +28,10 @@
 				$email_id=$_POST['email_address'];
 				$national_id=$_POST['national_id'];
 				$user_type = $_POST['role'];
-				$password = $_POST['password'];
+				$password = md5($_POST['password']);
+				date_default_timezone_set("Africa/Nairobi");
+				$datePrint=date("d-m-Y");
+				$time = date("h:i:sa");
 
 				$query = $conn->query("SELECT * FROM tbl_users WHERE national_id='$national_id'") or die (mysql_error());
 				$count = $query->fetch_array();
@@ -39,7 +45,7 @@
 					}
 					else
 					{
-						$user = $conn->query("insert into tbl_users(name, surname, email_id,national_id,role,password) VALUES('$name', '$surname','$email_id','$national_id','$user_type','$password')");
+						$user = $conn->query("insert into tbl_users(name, surname, email_id,national_id,role,password,date_created) VALUES('$name', '$surname','$email_id','$national_id','$user_type','$password','$datePrint')");
 						//$result = $user->fecth_array();
 	?>
 						<script>alert('You added a new user successfully.');</script>
@@ -87,7 +93,7 @@
 									<input type="number" class="form-control" name="national_id" placeholder="Enter Id Number" required>
 							</div>
 							<div class="col">
-								<label>Role</label>
+								<label>User Type</label>
 									<select class = "form-control" name = "role" required>
 										<option></option>
 										<option>admin</option>

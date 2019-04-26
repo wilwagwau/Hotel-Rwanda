@@ -1,4 +1,59 @@
+#top-section{
+    height: 10vh;
+    /* background-image: url(images/slides/banner1.jpg); 
+    background-size: cover; 
+    background-position: center; */
+}
 
+/*----------Welocme Text-------------*/
+.welcome{
+    padding: 50px 100px;
+    margin-top: 2px;
+    background-color: #fff;
+    box-shadow: 0 0 20px 7px rgba(0,0,0, 0.2);
+}
+.welcome h1{
+    color: #333;
+}
+.welcome form input, .welcome form textarea{
+    border: none;
+    border-bottom: 1px solid lightseagreen;
+}
+.welcome form input:focus, .welcome form textarea:focus{
+    border: none;
+    border-bottom: 1px solid lightskyblue;
+}
+.welcome form #icon{
+    color: orange;
+    margin-right: 14px;
+}
+.welcome .home-btn{
+    margin-top: 10px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    color: #fff;
+    background-color: #324c5f;
+}
+.welcome .btn:focus{
+    box-shadow: none;
+}
+.welcome .btn:hover{
+    color: #fff;
+    background-color: green;
+}
 
-
-
+/*Headings*/
+h2::after{
+    content: '';
+    background: #036a81;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+h2{
+    text-align: center;
+    color: #555 !important;
+    padding-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+}

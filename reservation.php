@@ -62,7 +62,7 @@
 								<div class="card" style="margin: 8px">
 									<div class="row" style="margin: 30px">
 										<div class="col-md-3">
-											<a href="photo/<?php echo $fetch['photo']?>" data-fluidbox>
+											<a href="images/rooms/<?php echo $fetch['room_photo']?>" data-fluidbox>
 												<img class="margin-bottom" src = "images/rooms/<?php echo $fetch['room_photo']?>" height = "150" width = "150" style="border-radius:50%; border: 3px solid lightblue"/>
 											</a>
 										</div>

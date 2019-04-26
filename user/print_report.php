@@ -41,7 +41,10 @@ class myPDF extends FPDF
 		$this->Cell(7,7,"Date ",0,0);
 		$this->Cell(14,7,": ".$datePrint,0,1);
 		$this->Ln(1);
+	}
 
+	function contentTable($conn)
+	{
 		//Reservation Details Title
 		$this->SetFont("Arial","B",12);
 		$this->Cell(35,10,"Transaction Report",0,1);
@@ -57,10 +60,6 @@ class myPDF extends FPDF
 		$this->Cell(30,10,'Bill',1,1,'L');
 		//$this->Cell(18,10,'Payment',1,1,'C');
 		//$this->Ln();
-	}
-
-	function viewTable($conn)
-	{
 		$this->SetFont('Times','',12);
 		$query2 = $conn->query("SELECT * FROM `tbl_transaction` NATURAL JOIN `tbl_rooms` NATURAL JOIN `tbl_guest` WHERE `status` = 'Check out' ORDER BY `transaction_id` ASC  ") or die(mysql_error());
         while($fetch2 = $query2->fetch_array())
@@ -73,14 +72,14 @@ class myPDF extends FPDF
 			$this->Cell(25,10,$fetch2['checkout'],1,0,'L');
 			$this->Cell(15,10,$fetch2['extra_bed'],1,0,'L');
 			$this->Cell(30,10,'Ksh. '.$fetch2['bill'].'.00',1,1,'L');
-                       
             $this->SetFont("Times","",12);
         }
 		$stmt = $conn->query("SELECT * FROM `tbl_transaction` WHERE `status` = 'Check out' ") or die(mysqli_error($conn));
 		$stmt1 = $stmt->fetch_array();
         $this->SetFont("Times","B",12);
 		$total = 0;
-		foreach($stmt as $details){
+		foreach($stmt as $details)
+		{
 		  $subtotal = $details['bill'];
 		  $total += $subtotal;
 		}
@@ -91,7 +90,7 @@ $pdf = new myPDF();
 $pdf->AliasNbPages();
 $pdf->AddPage('P','A4',0);
 $pdf->headerTable($conn);
-$pdf->viewTable($conn);
+$pdf->contentTable($conn);
 
 $pdf->Output('','Sales_as_at_'.$fetch['reserve_date'].'.pdf','F');
 ?>

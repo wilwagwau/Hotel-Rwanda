@@ -5,4 +5,5 @@
 	$name = $fetch1['name'];
 	$surname = $fetch1['surname'];
 	$role = $fetch1['role'];
+	$user_id = $fetch1['user_id'];
 ?>

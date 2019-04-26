@@ -33,53 +33,57 @@
 		<br />
 
 		<div class="card border-info">
-			<div class="card-header">Update User  </div>
+			<div class="card-header">Update Room  </div>
 			<?php
-				$query = $conn->query("SELECT * FROM `tbl_users` WHERE `user_id` = '$_REQUEST[user_id]'") or die(mysqli_error());
+				$query = $conn->query("SELECT * FROM `tbl_rooms` WHERE `room_id` = '$_REQUEST[room_id]'") or die(mysqli_error());
 				$fetch = $query->fetch_array();
 			?>
 			<div class="card-body text-info">
 				<div class="row">
 					
 					<div class="col-md-6" style="border-right: 1px solid grey">
-						<img src="../images/user.png" alt="Profile Picture" style="margin-left: 180px; margin-top: 10px"/>
+						<img src="../images/rooms/<?php echo $fetch['room_photo'];?>" style="margin-left:25%; width: 40%"/>
+						<!-- <input style="text-align: right" type = "file" required = "required" name = "room_photo" /> -->
 					</div>
 					<div class="col-md-6">
 						<form role="form" method = "post" enctype = "multipart/form-data">
 							<fieldset>
-																
+																		
 								<div class="form-group">
+									
 									<div class="row">
 										<div class="col">
-											<label>Name</label>
-												<input type="text" class="form-control" value="<?php echo $fetch['name']?>" name="name" placeholder="Enter name" required>
+											<label>Room Type</label>
+											<select class = "form-control" name = "room_type" value="<?php echo $fetch['room_type']?>" required />
+												<option></option>
+												<option>Mini Suite</option>
+												<option>Junior Suite</option>
+												<option>Master Suite</option>
+											</select>
+										</div>
+										
+										<div class="col">
+											<label>Room Label</label>
+												<input type="text" class="form-control" value="<?php echo "R-0".$fetch['room_label']?>" name="room_label" required>
 										</div>
 										<div class="col">
-											<label>Surname</label>
-												<input type="text" class="form-control" value="<?php echo $fetch['surname']?>" name="surname" placeholder="Enter surname" required>
-										</div>
-										<div class="col">
-											<label>National ID</label>
-												<input type="number" class="form-control" value="<?php echo $fetch['national_id']?>" name="national_id" placeholder="Enter Id Number" required>
+											<label>Room Price</label>
+												<input type="text" class="form-control" value="<?php echo "Ksh. ".$fetch['room_rate']?>" name="room_rate" required>
 										</div>
 									</div>
 								</div>
-											
-								<div class="form-group">
-									<label>Email Address</label>
-										<input class="form-control" placeholder="Enter email address" value="<?php echo $fetch['email_id']?>" name="email_address" type="email" required>
-								</div>
+								<br />
 								<div class="row">
 									<div class="col">
-										<button class="btn btn-sm btn-outline-success btn-block " name = "updateUser">Update <i class="fa fa-spin fa-refresh"></i></button>
+										<button class="btn btn-sm btn-outline-success btn-block " name = "updateRoom">Update <i class="fa fa-spin fa-refresh"></i></button>
 									</div>
 									<div class="col">
-										<a href="users.php" class="btn btn-sm btn-outline-danger btn-block"><i class="fa fa-close"></i> Cancel </a>
+										<a href="rooms.php" class="btn btn-sm btn-outline-danger btn-block"><i class="fa fa-close"></i> Cancel</a>
 									</div>
-								</div>		
+								</div>			
 							</fieldset>	
 						</form>
-						<?php require_once 'includes/update_user_query.php' ?>
+						<?php require_once 'includes/update_room_query.php' ?>
 					</div>
 				</div>
 					
